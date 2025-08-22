@@ -1,43 +1,76 @@
+import CardProvider from '@/components/CardProvider'
+import NewsList from '@/components/NewsList'
 import Link from 'next/link'
+import { FaCircleChevronRight } from 'react-icons/fa6'
 
 export default function Home () {
   return (
-    <main className='min-h-screen w-full flex flex-col gap-5 justify-center items-center'>
-      <img src='/icon.png' className='max-w-[50vh] ' alt='project icon' />
-      <div className='text-xl'>กำลังดำเนินการ</div>
-      <div className='flex gap-5 absolute  bottom-0 m-5 justify-center w-full'>
-        <svg
-          xmlns='http://www.w3.org/2000/svg'
-          width={24}
-          height={24}
-          viewBox='0 0 24 24'
-        >
+    <main className='min-h-screen w-full mt-10'>
+      {/* news section */}
+      <section className='container-x grid md:grid-cols-3 gap-5'>
+        <div className='md:col-span-2'>
+          <CardProvider />
+        </div>
+        <NewsList />
+      </section>
+
+      {/* about project */}
+      <section className='container-x flex md:flex-row flex-col gap-10 md:mt-42 mt-20'>
+        <div className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'>
+          เกี่ยวกับโครงการ
+        </div>
+        <div className='opacity-90 md:max-w-[40vw]'>
+          โครงการ
+          การจัดทำแผนหลักการบริหารจัดการทรัพยากรน้ำแบบบูรณาการระดับจังหวัด
+          และการขยายผลการเพิ่มประสิทธิภาพการบริหารจัดการน้ำแบบมีส่วนร่วม
+          จังหวัดพัทลุง จังหวัดสงขลา-พัทลุง
           <Link
-            target='_blank'
-            href={'https://www.facebook.com/profile.php?id=61578115720469'}
-            rel='noreferrer'
-            className='flex gap-2 items-center'
+            href='/'
+            className='mt-2 font-medium flex items-center gap-3  hover:opacity-70 duration-150'
           >
-            <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width={24}
-              height={24}
-              viewBox='0 0 24 24'
-            >
-              <path
-                fill='currentColor'
-                d='M12.683 22v-7.745h-2.607v-3.018h2.607V9.01a3.637 3.637 0 0 1 3.882-3.99a21 21 0 0 1 2.329.119v2.7h-1.599c-1.253 0-1.495.596-1.495 1.47v1.927h2.989l-.39 3.018h-2.6V22z'
-                opacity={0.5}
-              ></path>
-              <path
-                fill='currentColor'
-                d='M20.999 2H2.998a1 1 0 0 0-1 1v18.001a1 1 0 0 0 1 1h18.001a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1m-2.105 5.84h-1.599c-1.253 0-1.495.596-1.495 1.47v1.926h2.989l-.39 3.019h-2.6V22h-3.116v-7.745h-2.607v-3.019h2.607V9.01a3.637 3.637 0 0 1 3.882-3.99a21 21 0 0 1 2.329.12z'
-              ></path>
-            </svg>
-            <div className="text-black/80">แผนน้ำภาคใต้ วช. </div>
+            อ่านเพิ่มเติม{' '}
+            <FaCircleChevronRight className='text-[var(--primary)]' />
           </Link>
-        </svg>
-      </div>
+        </div>
+      </section>
+
+      {/* objective */}
+
+      <section className='container-x flex md:flex-row flex-col gap-10 md:mt-42 mt-20'>
+        <div className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'>
+          วัตถุประสงค์โครงการ
+        </div>
+        <div className='opacity-90 md:max-w-[40vw]'>
+          <ul className='space-y-2'>
+            <li>
+              1.เพื่อสนับสนุนแผนปฎิบัติการของโครงการจังหวัดภาคใต้ให้บรรลุเป้าหมาย
+            </li>
+            <li>
+              2. เพื่อติดตามความก้าวหน้าและสนับสนุนการทำ
+              งานของแผนงานการจัดการน้ำ ใน จังหวัดสงขลาและจังหวัดพัทลุง
+            </li>
+            <li>
+              3. เพื่อทบทวนรายงานและให้ความเห็นรายงานของแผนการจัดการน้ำ จังหวัด
+            </li>
+            <li>4. เพื่อสื่อสารและประชาสัมพันธ์งานการจัดการน้ำ ในภาคใต้</li>
+          </ul>
+        </div>
+      </section>
+
+      {/* map plan */}
+      <section className='bg-slate-50 md:py-20 py-10 md:mt-42 mt-20'>
+        <div className="container-x flex md:flex-row flex-col gap-2 ">
+          <div className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'>
+            พื้นที่ดำเนินการ
+          </div>
+          <div className='opacity-90 md:max-w-[40vw]'>
+            <img src='/map-plan.png' alt='แผนที่การดำเนินงานโปรเจค' />
+          </div>
+        </div>
+      </section>
+
+      {/* divider */}
+      <div className='mt-10 h-1'> </div>
     </main>
   )
 }
