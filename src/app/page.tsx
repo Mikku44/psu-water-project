@@ -77,11 +77,11 @@ export default function Home () {
           </div>
           <div className='opacity-90 flex justify-between mt-5 items-center md:flex-row flex-col'>
             {/* pattalung */}
-            <div className='space-y-5'>
+            <div className='space-y-5 flex flex-col-reverse'>
               <div className='grid gap-5 mt-2'>
                 <img
                   src='/home/pattalung-map.png'
-                  className='max-w-[200px]'
+                  className='w-full'
                   alt='พัทลุง พื้นที่ดำเนินการ'
                 />
               </div>
@@ -106,11 +106,11 @@ export default function Home () {
             </div>
             {/* songkla */}
 
-            <div className='space-y-5'>
+            <div className='space-y-5 flex flex-col-reverse'>
               <div className='grid gap-5 mt-2'>
                 <img
                   src='/home/songkla-map.png'
-                  className='max-w-[200px]'
+                  className='w-full'
                   alt='สงขลา พื้นที่ดำเนินการ'
                 />
               </div>
