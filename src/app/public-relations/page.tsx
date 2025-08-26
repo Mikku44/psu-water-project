@@ -1,14 +1,22 @@
 import CardProvider from '@/components/CardProvider'
-import NewsList from '@/components/NewsList'
+// import NewsList from '@/components/NewsList'
 import Link from 'next/link'
 import React from 'react'
+import { getAllNews } from '../repositories/news';
+
 
 const newsList = [1, 2, 3]
 
-export default function page () {
+export default async function page () {
+  const result = await getAllNews();
+  
+
+  console.log("NEWS :",result);
+  
   return (
     <section className='min-h-screen'>
       <section className='container-x grid mt-10  gap-5'>
+        
         <CardProvider />
       </section>
 

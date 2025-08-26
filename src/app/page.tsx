@@ -1,6 +1,7 @@
 import CardProvider from '@/components/CardProvider'
 import NewsList from '@/components/NewsList'
 import Link from 'next/link'
+import { BsCaretRightFill } from 'react-icons/bs'
 import { FaCircleChevronRight } from 'react-icons/fa6'
 
 export default function Home () {
@@ -25,7 +26,7 @@ export default function Home () {
           และการขยายผลการเพิ่มประสิทธิภาพการบริหารจัดการน้ำแบบมีส่วนร่วม
           จังหวัดพัทลุง จังหวัดสงขลา-พัทลุง
           <Link
-            href='/'
+            href='/public-relations'
             className='mt-2 font-medium flex items-center gap-3  hover:opacity-70 duration-150'
           >
             อ่านเพิ่มเติม{' '}
@@ -75,7 +76,7 @@ export default function Home () {
           <div className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'>
             พื้นที่การดำเนินการ
           </div>
-          <div className='opacity-90 flex justify-between mt-5 items-center md:flex-row flex-col'>
+          <div className='opacity-90 flex justify-between mt-5 gap-10 items-center md:flex-row flex-col'>
             {/* pattalung */}
             <div className='space-y-5 flex flex-col-reverse'>
               <div className='grid gap-5 mt-2'>
@@ -182,6 +183,48 @@ export default function Home () {
                 </ul>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* principle */}
+
+      <section className='md:py-20 py-10  mt-10'>
+        <div className='container-x '>
+          <div className="text-center mb-2 text-black/60">
+            หลักคิดการจัดการน้ำ
+          </div>
+          <div className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'>
+            &quot;น้ำมั่นคง ไม่ท่วม ไม่แล้ง&quot;
+          </div>
+        </div>
+
+        <div className=' flex md:flex-row flex-col items-center justify-between gap-10 container-x mt-10'>
+          {/* 1 */}
+          <div
+            className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'
+          >
+            <div className='text-4xl font-bold'>1</div>
+            <div className=''>การจัดการฐานข้อมูล น้ำท่วม-น้ำแล้ง</div>
+
+            
+
+          </div>
+          <BsCaretRightFill className='text-3xl md:rotate-0 rotate-90' />
+          {/* 2 */}
+          <div
+            className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'
+          >
+            <div className='text-4xl font-bold'>2</div>
+            <div className=''>ความรู้ นวัตกรรมและเทคโนโลยี</div>
+          </div>
+          <BsCaretRightFill className='text-3xl md:rotate-0 rotate-90' />
+          {/* 3 */}
+          <div
+            className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'
+          >
+            <div className='text-4xl font-bold'>3</div>
+            <div className=''>การเพิ่มรายได้หรือ ลดผลกระทบ</div>
           </div>
         </div>
       </section>

@@ -17,7 +17,7 @@ export default function CardProvider () {
           natus?
         </div>
         <Link
-          href='/'
+          href='/public-relations/news-test-article'
           className='text-white font-medium flex items-center gap-3 py-5 hover:opacity-70 duration-150'
         >
           อ่านเพิ่มเติม <FaCircleChevronRight />

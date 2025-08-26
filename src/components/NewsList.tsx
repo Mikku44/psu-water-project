@@ -13,7 +13,7 @@ export default function NewsList () {
       <div className='flex justify-between items-center'>
         <div className='text-xl font-bold'>ข่าวล่าสุด</div>
         <Link
-          href='/'
+          href='/public-relations'
           className=' font-medium flex items-center gap-3  hover:opacity-70 duration-150'
         >
           ดูทั้งหมด <FaCircleChevronRight className='text-[var(--primary)]' />
@@ -22,7 +22,7 @@ export default function NewsList () {
 
       <div className="mt-4 space-y-2">
           {/* card list */}
-          {newsList.map((item,index)=><Link key={index} href="#" className='grid grid-cols-3 gap-3 h-[120px] hover:opacity-90 duration-200'>
+          {newsList.map((item,index)=><Link key={index} href="/public-relations/12345" className='grid grid-cols-3 gap-3 h-[120px] hover:opacity-90 duration-200'>
             <div className='h-full w-full object-cover'>
               <img 
               className='h-full w-full object-cover'
