@@ -358,11 +358,76 @@ export default function Home () {
               ประชุมกรรมการน้ำเขตเมือง ทำ MOU ควบคุมระดับน้ำแก้มลิง
             </div>
 
-            <div className='text-lg mb-2 font-bold rounded-xl border w-fit p-5 shadow-md hover:shadow-lg transition-shadow'>
+            <div className='text-lg mb-2 font-bold rounded-xl border p-5 shadow-md hover:shadow-lg transition-shadow'>
               <div className='rounded-full bg-[var(--primary)]  left-[-30px] text-white shadow p-2 size-[30px] flex items-center justify-center'>
                 9
               </div>{' '}
               ติดตามประเมินผล ทบทวนเป้าหมายปีต่อไป
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Proposal */}
+
+      {/* <section className='md:py-20 py-10  mt-10'>
+        <div className='container-x '>
+          <div className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'>
+            &quot;โครงสร้างคณะทำงานระดับจังหวัด&quot;
+          </div>
+
+          <div className='rounded-xl mt-5 overflow-hidden  flex '>
+            <img
+              src='/home/provice-project.png'
+              className='w-full h-full object-cover'
+              alt='โครงสร้างคณะทำงาน'
+            />
+          </div>
+        </div>
+      </section> */}
+
+      {/* plan */}
+      <section className='mt-20'>
+        <div className='container-x flex md:flex-row flex-col gap-8'>
+          <h2 className='text-3xl md:text-2xl text-[var(--primary)] md:max-w-[300px] font-bold'>
+            แผนปฏิบัติการกระบวนการดำเนินงาน &quot;น้ำจังหวัด&quot;
+          </h2>
+
+          <div className='flex gap-20 md:flex-row md:px-0 px-10 justify-center flex-col'>
+            <div className='rounded-xl mt-5 max-w-[500px] overflow-hidden  flex '>
+              <img
+                src='/home/map.png'
+                className='w-full h-full object-cover'
+                alt='map'
+              />
+            </div>
+
+            <div className='relative border-l-4 border-[var(--primary)] pl-6 space-y-8'>
+              <div className='relative'>
+                <div className='absolute left-[-38px] top-1 w-6 h-6 rounded-full bg-[var(--primary)]'></div>
+                <p className='text-lg font-semibold'>เดือนที่ 1</p>
+                <p className='text-gray-700'>จัดตั้งคณะทำงาน</p>
+              </div>
+              <div className='relative'>
+                <div className='absolute left-[-38px] top-1 w-6 h-6 rounded-full bg-[var(--primary)]'></div>
+                <p className='text-lg font-semibold'>เดือนที่ 2</p>
+                <p className='text-gray-700'>วิเคราะห์ข้อมูล ความเสี่ยง</p>
+              </div>
+              <div className='relative'>
+                <div className='absolute left-[-38px] top-1 w-6 h-6 rounded-full bg-[var(--primary)]'></div>
+                <p className='text-lg font-semibold'>เดือนที่ 3</p>
+                <p className='text-gray-700'>จัดทำแผน</p>
+              </div>
+              <div className='relative'>
+                <div className='absolute left-[-38px] top-1 w-6 h-6 rounded-full bg-[var(--primary)]'></div>
+                <p className='text-lg font-semibold'>เดือนที่ 4-6</p>
+                <p className='text-gray-700'>จัดทำโครงการ และงบประมาณ</p>
+              </div>
+              <div className='relative'>
+                <div className='absolute left-[-38px] top-1 w-6 h-6 rounded-full bg-[var(--primary)]'></div>
+                <p className='text-lg font-semibold'>เดือนที่ 7-9</p>
+                <p className='text-gray-700'>ติดตามและประเมินผล</p>
+              </div>
             </div>
           </div>
         </div>
