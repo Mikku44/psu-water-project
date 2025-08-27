@@ -191,7 +191,7 @@ export default function Home () {
 
       <section className='md:py-20 py-10  mt-10'>
         <div className='container-x '>
-          <div className="text-center mb-2 text-black/60">
+          <div className='text-center mb-2 text-black/60'>
             หลักคิดการจัดการน้ำ
           </div>
           <div className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'>
@@ -201,30 +201,169 @@ export default function Home () {
 
         <div className=' flex md:flex-row flex-col items-center justify-between gap-10 container-x mt-10'>
           {/* 1 */}
-          <div
-            className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'
-          >
+          <div className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'>
             <div className='text-4xl font-bold'>1</div>
             <div className=''>การจัดการฐานข้อมูล น้ำท่วม-น้ำแล้ง</div>
-
-            
-
           </div>
           <BsCaretRightFill className='text-3xl md:rotate-0 rotate-90' />
           {/* 2 */}
-          <div
-            className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'
-          >
+          <div className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'>
             <div className='text-4xl font-bold'>2</div>
             <div className=''>ความรู้ นวัตกรรมและเทคโนโลยี</div>
           </div>
           <BsCaretRightFill className='text-3xl md:rotate-0 rotate-90' />
           {/* 3 */}
-          <div
-            className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'
-          >
+          <div className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'>
             <div className='text-4xl font-bold'>3</div>
             <div className=''>การเพิ่มรายได้หรือ ลดผลกระทบ</div>
+          </div>
+        </div>
+      </section>
+
+      {/* system */}
+
+      <section className='md:py-20 py-10  mt-10'>
+        <div className='container-x '>
+          <div className='text-center mb-2 text-black/60'>
+            ระบบฐานข้อมูลสารสนเทศน้ำระดับพื้นที่
+          </div>
+          <div className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'>
+            ตำบลจังหวัดกรม
+          </div>
+
+          {/* 1 */}
+          <div className='flex md:flex-row flex-col justify-around'>
+            <div className=''>
+              <div className='mt-10 text-lg mb-2 font-bold rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'>
+                สถานการณ์ปัญหาด้านการจัดการน้ำในพื้นที่จังหวัดพัทลุง
+              </div>
+              <div className=''>
+                <b>ปลายน้ำ :</b> น้ำท่วมซ้ำซาก (เมือง, ควนขนุน, เขาชัยสน ฯลฯ)
+              </div>
+              <div className=''>
+                <b>กลางน้ำ</b> : การขาดแคลนน้ำเพื่อการเกษตร
+              </div>
+              <div className=''>
+                <b>ต้นน้ำ</b> : น้ำป่าไหลหลาก (ป่าบอน, กงหรา, ศรีนครินทร์ ฯลฯ){' '}
+              </div>
+            </div>
+            {/* 2 */}
+            <div className=''>
+              <div className='mt-10 text-lg mb-2 font-bold rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'>
+                สถานการณ์ปัญหาด้านการจัดการน้ำในจังหวัดสงขลา
+              </div>
+              <div className=''>
+                <b>น้ำท่วมซ้ำซาก</b> : ในพื้นที่ อำเภอระโนด อำเภอหาดใหญ่
+                และอำเภอกระแสสินธ์ุ
+              </div>
+              <div className=''>
+                <b>การขาดแคลนน้ำ</b> : ในช่วงหน้าแล้ง เพื่อการอุปโภค บริโภค
+                และการเกษตร
+              </div>
+              <div className=''>
+                <b>น้ำเค็ม</b> : เข้ามาในทะเลสาบสงขลาในฤดูแล้ง{' '}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* flow-chart concept */}
+
+      <section className='md:py-20 py-10  mt-10'>
+        <div className='container-x '>
+          <div className='text-center mb-2 text-black/60'>
+            แนวคิดการจัดการน้ำจังหวัด
+          </div>
+          <div className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'>
+            ต้นแบบจังหวัดขอนแก่น
+          </div>
+
+          <div className='rounded-xl mt-5 overflow-hidden  flex '>
+            <img
+              src='/home/khonkaen.png'
+              className='w-full h-full object-cover'
+              alt='ต้นแบบจังหวัดขอนแก่น'
+            />
+          </div>
+        </div>
+      </section>
+
+      {/*  concept */}
+
+      <section className='md:py-20 py-10 mt-10'>
+        <div className='container-x'>
+          <div className='text-center mb-2 text-black/60'>
+            แนวทางการจัดทำแผนน้ำจังหวัด
+          </div>
+          <div className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'>
+            &quot;บูรณาการ ชัดเจน ไม่ซ้ำซ้อน เป็นระบบ&quot;
+          </div>
+
+          <div className='grid grid-cols-1 md:grid-cols-4 mx-auto w-fit gap-2 mt-10'>
+            <div className='text-lg mb-2 font-bold rounded-xl border  p-5 shadow-md hover:shadow-lg transition-shadow'>
+              <div className='rounded-full bg-[var(--primary)]  left-[-30px] text-white shadow p-2 size-[30px] flex items-center justify-center'>
+                1
+              </div>
+              ประชุมรับมอบนโยบายและแนวทางการบริหารจัดการน้ำจากผู้ว่าราชการจังหวัด
+            </div>
+
+            <div className='text-lg mb-2 font-bold rounded-xl border  p-5 shadow-md hover:shadow-lg transition-shadow'>
+              <div className='rounded-full bg-[var(--primary)]  left-[-30px] text-white shadow p-2 size-[30px] flex items-center justify-center'>
+                2
+              </div>{' '}
+              แต่งตั้งคณะทำงานเพื่อสนับสนุนการบริหารจัดการทรัพยากรน้ำจังหวัด
+            </div>
+
+            <div className='text-lg mb-2 font-bold rounded-xl border  p-5 shadow-md hover:shadow-lg transition-shadow'>
+              <div className='rounded-full bg-[var(--primary)]  left-[-30px] text-white shadow p-2 size-[30px] flex items-center justify-center'>
+                3
+              </div>
+              รวบรวมข้อมูลและวิเคราะห์ความเสี่ยงแล้ง/ท่วม
+            </div>
+
+            <div className='text-lg mb-2 font-bold rounded-xl border  p-5 shadow-md hover:shadow-lg transition-shadow'>
+              <div className='rounded-full bg-[var(--primary)]  left-[-30px] text-white shadow p-2 size-[30px] flex items-center justify-center'>
+                4
+              </div>{' '}
+              ประชุมจัดทำแผน
+            </div>
+
+            <div className='text-lg mb-2 font-bold rounded-xl border  p-5 shadow-md hover:shadow-lg transition-shadow'>
+              <div className='rounded-full bg-[var(--primary)]  left-[-30px] text-white shadow p-2 size-[30px] flex items-center justify-center'>
+                5
+              </div>{' '}
+              ทบทวน แผนงาน/โครงการ (เพิ่มเติม) จากพื้นที่
+            </div>
+
+            <div className='text-lg mb-2 font-bold rounded-xl border  p-5 shadow-md hover:shadow-lg transition-shadow'>
+              <div className='rounded-full bg-[var(--primary)]  left-[-30px] text-white shadow p-2 size-[30px] flex items-center justify-center'>
+                6
+              </div>{' '}
+              ประชุมทบทวน เป้าหมาย ตัวชี้วัด แผนบริหารจัดการน้ำของจังหวัด
+            </div>
+
+            <div className='text-lg mb-2 font-bold rounded-xl border  p-5 shadow-md hover:shadow-lg transition-shadow'>
+              <div className='rounded-full bg-[var(--primary)]  left-[-30px] text-white shadow p-2 size-[30px] flex items-center justify-center'>
+                7
+              </div>{' '}
+              ประชาสัมพันธ์ นำเสนอ แผนในคณะอนุกรรมการน้ำ- ประชุม กบจ. -
+              ลงนามประกาศใช้แผน
+            </div>
+
+            <div className='text-lg mb-2 font-bold rounded-xl border  p-5 shadow-md hover:shadow-lg transition-shadow'>
+              <div className='rounded-full bg-[var(--primary)]  left-[-30px] text-white shadow p-2 size-[30px] flex items-center justify-center'>
+                8
+              </div>{' '}
+              ประชุมกรรมการน้ำเขตเมือง ทำ MOU ควบคุมระดับน้ำแก้มลิง
+            </div>
+
+            <div className='text-lg mb-2 font-bold rounded-xl border w-fit p-5 shadow-md hover:shadow-lg transition-shadow'>
+              <div className='rounded-full bg-[var(--primary)]  left-[-30px] text-white shadow p-2 size-[30px] flex items-center justify-center'>
+                9
+              </div>{' '}
+              ติดตามประเมินผล ทบทวนเป้าหมายปีต่อไป
+            </div>
           </div>
         </div>
       </section>
