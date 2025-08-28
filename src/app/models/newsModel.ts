@@ -4,11 +4,10 @@ export interface INews {
     slug:        string;
     title:       string;
     image_url:   string[];
-    content:     IContent[];
+    content:     IContent;
     description: string;
 }
 
 export interface IContent {
-    type : string;
-    text : string;
+   data : {type:string,text:string}[];
 }

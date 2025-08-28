@@ -4,45 +4,98 @@ import BreadcrumbChev from '@/components/Breadcrumb'
 import { notFound } from 'next/navigation'
 import React from 'react'
 
-const items = [{ href: '#', label: 'บทความ' }]
-
-
 interface INewsProps {
-  params : Promise<{slug:string}>
+  params: Promise<{ slug: string }>
 }
 
-export default async function page ({
-  params
-}:Readonly<INewsProps>) {
-
-  const {slug} = await params;
+export default async function page ({ params }: Readonly<INewsProps>) {
+  const { slug } = await params
   const slugSearch: INews[] = (await getNewsWithSlug(slug)) || []
 
-  // console.log('slug :', slugSearch)
-
   if (slugSearch?.length > 0) {
-    const currentNews = slugSearch[0];
+    const currentNews = slugSearch[0]
+    const items = [
+      { href: '/public-relations', label: 'บทความ' },
+      { href: '#', label: currentNews?.title }
+    ]
+    const renderContent = (content: INews['content']) => {
+      return content?.data?.map((item, index) => {
+        switch (item.type) {
+          case 'heading':
+            return (
+              <h3
+                key={index}
+                className='text-2xl font-semibold text-gray-800 my-4'
+              >
+                {item.text}
+              </h3>
+            )
+          case 'paragraph':
+            return (
+              <p key={index} className='text-gray-700 leading-relaxed my-2'>
+                {item.text}
+              </p>
+            )
+          case 'list':
+            return (
+              <ul
+                key={index}
+                className='list-disc list-inside ml-4 my-2 space-y-1 text-gray-700'
+              >
+                {item.text.split('\n').map((li, idx) => (
+                  <li key={idx}>{li}</li>
+                ))}
+              </ul>
+            )
+
+          default:
+            return (
+              <p key={index} className='text-gray-700 my-2'>
+                {item.text}
+              </p>
+            )
+        }
+      })
+    }
+
     return (
-      <main className='min-h-screen'>
-        <section className='bg-slate-50 min-h-[500px] max-h-[500px] relative'>
-         
-          <BreadcrumbChev items={items} className=' container-x pt-10' />
+      <main className='min-h-screen bg-white'>
+        {/* Header Section */}
+        <section className='bg-slate-50 min-h-[500px] relative'>
+          <BreadcrumbChev items={items} className='container-x pt-10' />
           <div className='container-x flex h-[500px] justify-center flex-col'>
             <div className='text-5xl font-bold text-[var(--primary)]'>
               {currentNews?.title}
             </div>
-            <div className=' text-black/80'>   .</div>
+            <div className='text-black/80 mt-4'>{currentNews?.description}</div>
           </div>
         </section>
 
-        {/* Content */}
-
-        <section className="container-x mt-10">
-          <div className="">test</div>
+        {/* Content Section */}
+        <section className='container-x mt-10'>
+          <div className='prose max-w-full'>
+            {renderContent(currentNews.content)}
+          </div>
         </section>
+
+        {/* Image Gallery (if any) */}
+        {currentNews.image_url?.length > 0 && (
+          <section className='container-x my-10'>
+            <div className='columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4'>
+              {currentNews.image_url.map((img, idx) => (
+                <img
+                  key={idx}
+                  src={img}
+                  alt={`news-gallery-${idx}`}
+                  className='w-full mb-4 break-inside-avoid rounded-lg shadow-sm object-cover'
+                />
+              ))}
+            </div>
+          </section>
+        )}
       </main>
     )
   } else {
-    return notFound();
+    return notFound()
   }
 }

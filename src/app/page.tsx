@@ -1,10 +1,10 @@
-'use client'
+
 import CardProvider from '@/components/CardProvider'
 import NewsList from '@/components/NewsList'
 import Link from 'next/link'
 import { BsCaretRightFill } from 'react-icons/bs'
 import { FaCircleChevronRight } from 'react-icons/fa6'
-import { motion } from 'framer-motion'
+import * as motion from 'motion/react-client'
 
 // Animation variants
 const fadeInUp = {
@@ -63,10 +63,10 @@ export default function Home () {
         animate='visible'
         variants={staggerChildren}
       >
-        <motion.div className='md:col-span-2' variants={fadeInLeft}>
+        <motion.div className='md:col-span-2' animate={fadeInLeft}>
           <CardProvider />
         </motion.div>
-        <motion.div variants={fadeInRight}>
+        <motion.div animate={fadeInRight}>
           <NewsList />
         </motion.div>
       </motion.section>
@@ -81,13 +81,13 @@ export default function Home () {
       >
         <motion.div
           className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'
-          variants={fadeInLeft}
+          animate={fadeInLeft}
         >
           เกี่ยวกับโครงการ
         </motion.div>
         <motion.div
           className='opacity-90 md:max-w-[40vw]'
-          variants={fadeInRight}
+          animate={fadeInRight}
         >
           โครงการ
           การจัดทำแผนหลักการบริหารจัดการทรัพยากรน้ำแบบบูรณาการระดับจังหวัด
@@ -118,13 +118,13 @@ export default function Home () {
       >
         <motion.div
           className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'
-          variants={fadeInLeft}
+          animate={fadeInLeft}
         >
           วัตถุประสงค์โครงการ
         </motion.div>
         <motion.div
           className='opacity-90 md:max-w-[40vw]'
-          variants={fadeInRight}
+          animate={fadeInRight}
         >
           <motion.ul className='space-y-2' variants={staggerChildren}>
             {[
@@ -133,7 +133,7 @@ export default function Home () {
               '3. เพื่อทบทวนรายงานและให้ความเห็นรายงานของแผนการจัดการน้ำ จังหวัด',
               '4. เพื่อสื่อสารและประชาสัมพันธ์งานการจัดการน้ำ ในภาคใต้'
             ].map((item, index) => (
-              <motion.li key={index} variants={fadeInUp}>
+              <motion.li key={index} animate={fadeInUp}>
                 {item}
               </motion.li>
             ))}
@@ -152,13 +152,13 @@ export default function Home () {
         <div className='container-x flex md:flex-row flex-col gap-2 '>
           <motion.div
             className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'
-            variants={fadeInLeft}
+            animate={fadeInLeft}
           >
             พื้นที่ดำเนินการ
           </motion.div>
           <motion.div
             className='opacity-90 md:max-w-[40vw]'
-            variants={fadeInRight}
+            animate={fadeInRight}
           >
             <motion.img
               src='/map-plan.png'
@@ -181,7 +181,7 @@ export default function Home () {
         <div className='container-x flex  flex-col gap-2 '>
           <motion.div
             className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             พื้นที่การดำเนินการ
           </motion.div>
@@ -189,7 +189,7 @@ export default function Home () {
             {/* pattalung */}
             <motion.div
               className='space-y-5 flex flex-col-reverse'
-              variants={fadeInLeft}
+              animate={fadeInLeft}
             >
               <motion.div
                 className='grid gap-5 mt-2'
@@ -229,7 +229,7 @@ export default function Home () {
             {/* songkla */}
             <motion.div
               className='space-y-5 flex flex-col-reverse'
-              variants={fadeInRight}
+              animate={fadeInRight}
             >
               <motion.div
                 className='grid gap-5 mt-2'
@@ -280,12 +280,12 @@ export default function Home () {
         <div className='container-x flex  flex-col gap-2 '>
           <motion.div
             className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             เป้าหมาย
           </motion.div>
           <div className='opacity-90 flex justify-between mt-5 items-center md:flex-row flex-col'>
-            <motion.div className='' variants={fadeInLeft}>
+            <motion.div className='' animate={fadeInLeft}>
               <div className='text-xl'>จังหวัดพัทลุง</div>
               <div className='text-sm text-black/80'>
                 <motion.ul variants={staggerChildren}>
@@ -295,7 +295,7 @@ export default function Home () {
                     '3) เกษตรกรได้รับความเดือดร้อนจากภัยพิบัติลดลง 1364 ครัวเรือน',
                     '4) ลดค่าใช้จ่าย ค่าชดเชยเยียวยาของภาครัฐจํานวน 682 ครัวเรือน'
                   ].map((item, index) => (
-                    <motion.li key={index} variants={fadeInUp}>
+                    <motion.li key={index} animate={fadeInUp}>
                       {item}
                     </motion.li>
                   ))}
@@ -303,7 +303,7 @@ export default function Home () {
               </div>
             </motion.div>
 
-            <motion.div className='' variants={fadeInRight}>
+            <motion.div className='' animate={fadeInRight}>
               <div className='text-xl '>จังหวัดสงขลา</div>
               <div className='text-sm text-black/80'>
                 <motion.ul variants={staggerChildren}>
@@ -313,7 +313,7 @@ export default function Home () {
                     '3) ลดความเดือดร้อนต่อเกษตรกรจากนาท่วม นาแล้ง 7,500 ครัวเรือน',
                     '4) ลดค่าใช้จ่าย ค่าชดเชยเยียวยาของภาครัฐสําจํานวน 2,250 ครัวเรือน'
                   ].map((item, index) => (
-                    <motion.li key={index} variants={fadeInUp}>
+                    <motion.li key={index} animate={fadeInUp}>
                       {item}
                     </motion.li>
                   ))}
@@ -335,13 +335,13 @@ export default function Home () {
         <div className='container-x '>
           <motion.div
             className='text-center mb-2 text-black/60'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             หลักคิดการจัดการน้ำ
           </motion.div>
           <motion.div
             className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             &quot;น้ำมั่นคง ไม่ท่วม ไม่แล้ง&quot;
           </motion.div>
@@ -354,7 +354,7 @@ export default function Home () {
           {/* 1 */}
           <motion.div
             className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'
-            variants={scaleIn}
+            animate={scaleIn}
             whileHover={{
               scale: 1.05,
               boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
@@ -366,8 +366,8 @@ export default function Home () {
           </motion.div>
 
           <motion.div
-            variants={fadeInUp}
-            animate={{ x: [0, 10, 0] }}
+            animate={fadeInUp}
+            
             transition={{
               repeat: Infinity,
               duration: 2,
@@ -380,7 +380,7 @@ export default function Home () {
           {/* 2 */}
           <motion.div
             className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'
-            variants={scaleIn}
+            animate={scaleIn}
             whileHover={{
               scale: 1.05,
               boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
@@ -392,8 +392,8 @@ export default function Home () {
           </motion.div>
 
           <motion.div
-            variants={fadeInUp}
-            animate={{ x: [0, 10, 0] }}
+            animate={fadeInUp}
+            
             transition={{
               repeat: Infinity,
               duration: 2,
@@ -407,7 +407,7 @@ export default function Home () {
           {/* 3 */}
           <motion.div
             className='rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'
-            variants={scaleIn}
+            animate={scaleIn}
             whileHover={{
               scale: 1.05,
               boxShadow: '0 10px 25px rgba(0,0,0,0.1)'
@@ -431,13 +431,13 @@ export default function Home () {
         <div className='container-x '>
           <motion.div
             className='text-center mb-2 text-black/60'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             ระบบฐานข้อมูลสารสนเทศน้ำระดับพื้นที่
           </motion.div>
           <motion.div
             className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             ตำบลจังหวัดกรม
           </motion.div>
@@ -446,7 +446,7 @@ export default function Home () {
             className='flex md:flex-row flex-col justify-around'
             variants={staggerChildren}
           >
-            <motion.div className='' variants={fadeInLeft}>
+            <motion.div className='' animate={fadeInLeft}>
               <div className='mt-10 text-lg mb-2 font-bold rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'>
                 สถานการณ์ปัญหาด้านการจัดการน้ำในพื้นที่จังหวัดพัทลุง
               </div>
@@ -461,7 +461,7 @@ export default function Home () {
               </div>
             </motion.div>
 
-            <motion.div className='' variants={fadeInRight}>
+            <motion.div className='' animate={fadeInRight}>
               <div className='mt-10 text-lg mb-2 font-bold rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'>
                 สถานการณ์ปัญหาด้านการจัดการน้ำในจังหวัดสงขลา
               </div>
@@ -492,20 +492,20 @@ export default function Home () {
         <div className='container-x '>
           <motion.div
             className='text-center mb-2 text-black/60'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             แนวคิดการจัดการน้ำจังหวัด
           </motion.div>
           <motion.div
             className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             ต้นแบบจังหวัดขอนแก่น
           </motion.div>
 
           <motion.div
             className='rounded-xl mt-5 overflow-hidden  flex'
-            variants={fadeInUp}
+            animate={fadeInUp}
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
           >
@@ -529,13 +529,13 @@ export default function Home () {
         <div className='container-x'>
           <motion.div
             className='text-center mb-2 text-black/60'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             แนวทางการจัดทำแผนน้ำจังหวัด
           </motion.div>
           <motion.div
             className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             &quot;บูรณาการ ชัดเจน ไม่ซ้ำซ้อน เป็นระบบ&quot;
           </motion.div>
@@ -558,7 +558,7 @@ export default function Home () {
               <motion.div
                 key={index}
                 className='text-lg mb-2 font-bold rounded-xl border  p-5 shadow-md hover:shadow-lg transition-shadow'
-                variants={scaleIn}
+                animate={scaleIn}
                 whileHover={{
                   scale: 1.05,
                   boxShadow: '0 15px 30px rgba(0,0,0,0.15)'
@@ -586,7 +586,7 @@ export default function Home () {
         <div className='container-x flex md:flex-row flex-col gap-8'>
           <motion.h2
             className='text-3xl md:text-2xl text-[var(--primary)] md:max-w-[300px] font-bold'
-            variants={fadeInLeft}
+            animate={fadeInLeft}
           >
             แผนปฏิบัติการกระบวนการดำเนินงาน &quot;น้ำจังหวัด&quot;
           </motion.h2>
@@ -594,7 +594,7 @@ export default function Home () {
           <div className='flex gap-20 md:flex-row md:px-0 px-10 justify-center flex-col'>
             <motion.div
               className='rounded-xl mt-5 max-w-[500px] overflow-hidden  flex'
-              variants={fadeInRight}
+              animate={fadeInRight}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
@@ -619,7 +619,7 @@ export default function Home () {
                 <motion.div
                   key={index}
                   className='relative'
-                  variants={fadeInUp}
+                  animate={fadeInUp}
                   whileHover={{ x: 10 }}
                   transition={{ duration: 0.3 }}
                 >
@@ -648,12 +648,12 @@ export default function Home () {
         <div className='container-x grid md:grid-cols-2 gap-8'>
           <motion.h2
             className='text-3xl md:text-2xl text-[var(--primary)] md:max-w-[300px] font-bold'
-            variants={fadeInLeft}
+            animate={fadeInLeft}
           >
             การจัดการน้ำ &quot;จังหวัด-น้ำตำบล&quot;
           </motion.h2>
 
-          <motion.div className=' ' variants={fadeInRight}>
+          <motion.div className=' ' animate={fadeInRight}>
             <motion.div
               className='rounded-xl mt-5 overflow-hidden  flex'
               whileHover={{ scale: 1.02 }}
@@ -680,13 +680,13 @@ export default function Home () {
         <div className='container-x'>
           <motion.div
             className='text-center mb-2 text-black/60'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             พื้นที่เป้าหมาย
           </motion.div>
           <motion.div
             className='text-4xl md:text-5xl text-center text-[var(--primary)] font-bold'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             จังหวัดสงขลา 25 ตำบล
           </motion.div>
@@ -698,7 +698,7 @@ export default function Home () {
             {/* Map */}
             <motion.div
               className='rounded-2xl overflow-hidden shadow-lg'
-              variants={fadeInLeft}
+              animate={fadeInLeft}
               whileHover={{
                 scale: 1.02,
                 boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
@@ -715,7 +715,7 @@ export default function Home () {
             {/* Table */}
             <motion.div
               className='overflow-x-auto shadow-lg rounded-2xl'
-              variants={fadeInRight}
+              animate={fadeInRight}
             >
               <table className='w-full border-collapse'>
                 <thead>
@@ -803,13 +803,13 @@ export default function Home () {
         <div className='container-x'>
           <motion.div
             className='text-center mb-2 text-black/60'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             พื้นที่เป้าหมาย
           </motion.div>
           <motion.div
             className='text-4xl md:text-5xl text-center text-[var(--primary)] font-bold'
-            variants={fadeInUp}
+            animate={fadeInUp}
           >
             จังหวัดพัทลุง จำนวน 13 ตำบล
           </motion.div>
@@ -821,7 +821,7 @@ export default function Home () {
             {/* Map */}
             <motion.div
               className='rounded-2xl overflow-hidden shadow-lg'
-              variants={fadeInLeft}
+              animate={fadeInLeft}
               whileHover={{
                 scale: 1.02,
                 boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
@@ -838,7 +838,7 @@ export default function Home () {
             {/* Table */}
             <motion.div
               className='overflow-x-auto shadow-lg rounded-2xl'
-              variants={fadeInRight}
+              animate={fadeInRight}
             >
               <table className='w-full border-collapse'>
                 <thead>
