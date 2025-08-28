@@ -126,3 +126,11 @@
     @apply bg-background text-foreground;
     }
 }
+
+.table-col {
+    @apply  border border-black/50 px-2 py-1 ;
+}
+
+.table-row{
+    @apply odd:bg-slate-200 bg-amber-700;
+}
