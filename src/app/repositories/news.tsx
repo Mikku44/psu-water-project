@@ -1,6 +1,12 @@
 import { createClient } from "../utils/supabase/server";
 
 
+
+interface NewsFilter {
+  query?: string
+  sort?: 'latest' | 'oldest' | 'name'
+}
+
 export  async function getLatestNews() {
   const supabase = await createClient();
   const { data: news } = await supabase.from("news").select();
@@ -22,3 +28,40 @@ export  async function getNewsWithSlug(slug:string) {
 
   return news;
 }
+
+export async function getFilterNews({ query = '', sort = 'latest' }: NewsFilter) {
+  const supabase = await createClient()
+
+  let req = supabase.from('news').select('*')
+
+  
+  if (query) {
+    req = req.or(`title.ilike.%${query}%,description.ilike.%${query}%`)
+  }
+
+  switch (sort) {
+    case 'oldest':
+      req = req.order('created_at', { ascending: true })
+      break
+    case 'name':
+      req = req.order('title', { ascending: true })
+      break
+    case 'latest':
+    default:
+      req = req.order('created_at', { ascending: false })
+      break
+  }
+
+  const { data, error } = await req
+  if (error) {
+    console.error('Error fetching news:', error.message)
+    return []
+  }
+
+  return data
+}
+
+
+
+
+

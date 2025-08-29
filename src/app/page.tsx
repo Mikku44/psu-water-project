@@ -63,7 +63,8 @@ export default function Home () {
         animate='visible'
         variants={staggerChildren}
       >
-        <motion.div className='md:col-span-2' animate={fadeInLeft}>
+        <motion.div className='md:col-span-2' 
+        whileInView={fadeInLeft}>
           <CardProvider />
         </motion.div>
         <motion.div animate={fadeInRight}>
@@ -81,7 +82,7 @@ export default function Home () {
       >
         <motion.div
           className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'
-          animate={fadeInLeft}
+          whileInView={fadeInLeft}
         >
           เกี่ยวกับโครงการ
         </motion.div>
@@ -118,7 +119,7 @@ export default function Home () {
       >
         <motion.div
           className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'
-          animate={fadeInLeft}
+          whileInView={fadeInLeft}
         >
           วัตถุประสงค์โครงการ
         </motion.div>
@@ -133,7 +134,7 @@ export default function Home () {
               '3. เพื่อทบทวนรายงานและให้ความเห็นรายงานของแผนการจัดการน้ำ จังหวัด',
               '4. เพื่อสื่อสารและประชาสัมพันธ์งานการจัดการน้ำ ในภาคใต้'
             ].map((item, index) => (
-              <motion.li key={index} animate={fadeInUp}>
+              <motion.li key={index} whileInView={fadeInUp}>
                 {item}
               </motion.li>
             ))}
@@ -152,7 +153,7 @@ export default function Home () {
         <div className='container-x flex md:flex-row flex-col gap-2 '>
           <motion.div
             className='text-3xl md:text-2xl md:min-w-[400px] text-[var(--primary)] font-bold'
-            animate={fadeInLeft}
+            whileInView={fadeInLeft}
           >
             พื้นที่ดำเนินการ
           </motion.div>
@@ -189,7 +190,7 @@ export default function Home () {
             {/* pattalung */}
             <motion.div
               className='space-y-5 flex flex-col-reverse'
-              animate={fadeInLeft}
+              whileInView={fadeInLeft}
             >
               <motion.div
                 className='grid gap-5 mt-2'
@@ -285,7 +286,7 @@ export default function Home () {
             เป้าหมาย
           </motion.div>
           <div className='opacity-90 flex justify-between mt-5 items-center md:flex-row flex-col'>
-            <motion.div className='' animate={fadeInLeft}>
+            <motion.div className='' whileInView={fadeInLeft}>
               <div className='text-xl'>จังหวัดพัทลุง</div>
               <div className='text-sm text-black/80'>
                 <motion.ul variants={staggerChildren}>
@@ -446,7 +447,7 @@ export default function Home () {
             className='flex md:flex-row flex-col justify-around'
             variants={staggerChildren}
           >
-            <motion.div className='' animate={fadeInLeft}>
+            <motion.div className='' whileInView={fadeInLeft}>
               <div className='mt-10 text-lg mb-2 font-bold rounded-xl bg-linear-90 from-blue-100 to-blue-50 p-5'>
                 สถานการณ์ปัญหาด้านการจัดการน้ำในพื้นที่จังหวัดพัทลุง
               </div>
@@ -586,7 +587,7 @@ export default function Home () {
         <div className='container-x flex md:flex-row flex-col gap-8'>
           <motion.h2
             className='text-3xl md:text-2xl text-[var(--primary)] md:max-w-[300px] font-bold'
-            animate={fadeInLeft}
+            whileInView={fadeInLeft}
           >
             แผนปฏิบัติการกระบวนการดำเนินงาน &quot;น้ำจังหวัด&quot;
           </motion.h2>
@@ -648,7 +649,7 @@ export default function Home () {
         <div className='container-x grid md:grid-cols-2 gap-8'>
           <motion.h2
             className='text-3xl md:text-2xl text-[var(--primary)] md:max-w-[300px] font-bold'
-            animate={fadeInLeft}
+            whileInView={fadeInLeft}
           >
             การจัดการน้ำ &quot;จังหวัด-น้ำตำบล&quot;
           </motion.h2>
@@ -698,7 +699,7 @@ export default function Home () {
             {/* Map */}
             <motion.div
               className='rounded-2xl overflow-hidden shadow-lg'
-              animate={fadeInLeft}
+              whileInView={fadeInLeft}
               whileHover={{
                 scale: 1.02,
                 boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
@@ -821,7 +822,7 @@ export default function Home () {
             {/* Map */}
             <motion.div
               className='rounded-2xl overflow-hidden shadow-lg'
-              animate={fadeInLeft}
+              whileInView={fadeInLeft}
               whileHover={{
                 scale: 1.02,
                 boxShadow: '0 20px 40px rgba(0,0,0,0.15)'
