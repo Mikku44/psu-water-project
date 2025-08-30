@@ -33,7 +33,7 @@ export default async function NewsList () {
               <img
                 className='h-full w-full group-hover:scale-105 duration-200 object-cover'
                 src={
-                  item?.image_url ||
+                  item?.image_url?.[0] ||
                   'https://images.unsplash.com/photo-1520361098688-a4b9960d394b?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
                 }
                 alt='psu-image'
