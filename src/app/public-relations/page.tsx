@@ -105,7 +105,7 @@ export default async function Page({ searchParams }: PageProps) {
                       <img
                         className='h-full w-full group-hover:scale-105 duration-200 object-cover'
                         src={
-                          item?.image_url ||
+                          item?.image_url?.[0] ||
                           'https://images.unsplash.com/photo-1520361098688-a4b9960d394b?q=80&w=1172&auto=format&fit=crop'
                         }
                         alt='psu-image'
