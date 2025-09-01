@@ -4,7 +4,25 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-    --primary: oklch(0.208 0.042 265.755);
+    --color-primary: #0047A1;
+    --color-secondary: #6BBA22;
+    --color-secondary-light: #FDEEBE;
+    --color-success: #28a745;
+    --color-info: #0985F6;
+    --color-warning: #ffc107;
+    --color-danger: #FF2626;
+    --color-black: #000;
+    --color-white: #fff;
+    --color-default: #707070;
+    --color-yellow: #ffc107;
+    --color-yellow-100: #ffc107b0;
+    --color-yellow-200: #ffa900;
+    --color-gray: #9197A3;
+    --color-gray-100: #D4D9DF;
+    --color-gray-200: #F7F8FA;
+    --color-border: #D4D9DF;
+    
+    --primary: #0047A1;
     --radius: 0.625rem;
     --background: oklch(1 0 0);
     --foreground: oklch(0.129 0.042 264.695);
@@ -55,6 +73,7 @@
     --color-foreground: var(--foreground);
     --color-card: var(--card);
     --color-card-foreground: var(--card-foreground);
+    
     --color-popover: var(--popover);
     --color-popover-foreground: var(--popover-foreground);
     --color-primary: var(--primary);
@@ -82,6 +101,7 @@
     --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
     --color-sidebar-border: var(--sidebar-border);
     --color-sidebar-ring: var(--sidebar-ring);
+    
 }   
 
 .dark {
@@ -126,6 +146,61 @@
     @apply bg-background text-foreground;
     }
 }
+
+.embla {
+  overflow: hidden;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  @apply  flex items-center justify-center bg-black/20;
+}
+.embla {
+  overflow: hidden;
+}
+.embla__viewport {
+  overflow: hidden;
+  width: 100%;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  position: relative;
+  min-width: 100%;
+  flex: 0 0 100%;
+}
+
+.embla__dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem; /* space between dots */
+  margin-top: 1rem;
+}
+
+.embla__dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #d1d5db; /* gray-300 */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.embla__dot.is-selected {
+  background-color: #3b82f6; /* blue-500 */
+  transform: scale(1.2);
+}
+
+.text-5xl{
+  @apply py-2;
+}
+
 
 .table-col {
     @apply  border border-black/50 px-2 py-1 ;

@@ -5,7 +5,12 @@ export function middleware(req: NextRequest) {
   const userSession = req.cookies.get("user_session");
 
   // Protected paths
-  const protectedPaths = ["/news/manage"];
+  const protectedPaths = [
+    "/news/manage",
+    "/contact/manage",
+    "/carousel/manage",
+
+  ];
   const url = req.nextUrl.pathname;
 
   // If user tries to access protected path without cookie → redirect to login
@@ -19,5 +24,5 @@ export function middleware(req: NextRequest) {
 
 // Configure matcher to run middleware only on certain routes
 export const config = {
-  matcher: ["/news/manage/:path*"],
+  matcher: ["/:path*/manage/:path*"],
 };

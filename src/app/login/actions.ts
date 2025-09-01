@@ -39,5 +39,5 @@ export async function loginAction(
   }
 
   // redirect should be outside try-catch as it throws internally
-  redirect("/news/manage");
+  redirect("/dashboard");
 }

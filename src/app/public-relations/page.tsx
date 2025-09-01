@@ -112,7 +112,7 @@ export default async function Page({ searchParams }: PageProps) {
                       />
                     </div>
                     <div className='col-span-2 h-full p-5 relative'>
-                      <div className='text-lg text-gray-800 font-bold'>
+                      <div className='text-lg line-clamp-2 text-gray-800 font-bold'>
                         {item?.title || 'ข่าวประชาสัมพันธ์'}
                       </div>
                       <div className=' text-gray-600 text-sm line-clamp-3 '>
@@ -120,7 +120,7 @@ export default async function Page({ searchParams }: PageProps) {
                       </div>
 
                       <div className=' absolute m-2 flex justify-between text-[12px] text-gray-500 px-8 w-full bottom-0 right-0'>
-                        <div className=''>แผนน้ำภาคใต้วช.</div>
+                        <div className='md:block hidden'>แผนน้ำภาคใต้วช.</div>
                         <div className=''>
                           อัพโหลดเมื่อ :{' '}
                           {new Date(item?.created_at).toDateString()}
