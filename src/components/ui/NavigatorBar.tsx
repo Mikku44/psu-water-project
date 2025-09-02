@@ -4,6 +4,8 @@ import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import { useState } from 'react'
 import { HiHome, HiUserGroup, HiChatAlt, HiMenu, HiPhone } from 'react-icons/hi'
+import { MdContactSupport } from "react-icons/md";
+import { TbChartInfographic } from "react-icons/tb";
 
 import {
   Drawer,
@@ -23,7 +25,7 @@ export default function NavigatorBar () {
   // Menu items data
   const menuItems = [
     { id: 1, href: '/', label: 'หน้าแรก', icon: <HiHome /> },
-    { id: 2, href: '/project-info', label: 'รู้จักโครงการ', icon: <HiUserGroup /> },
+    { id: 2, href: '/project-info', label: 'รู้จักโครงการ', icon: <TbChartInfographic /> },
     { id: 3, href: '/board', label: 'คณะทีมวิจัย', icon: <HiUserGroup /> },
     {
       id: 4,
@@ -31,7 +33,7 @@ export default function NavigatorBar () {
       label: 'ข้อมูลข่าวสารประชาสัมพันธ์ ',
       icon: <HiChatAlt />
     },
-    { id: 5, href: '/contact', label: 'ติดต่อ/ประสานงาน', icon: <HiChatAlt /> }
+    { id: 5, href: '/contact', label: 'ติดต่อ/ประสานงาน', icon: <MdContactSupport /> }
   ]
 
   return (
@@ -43,17 +45,17 @@ export default function NavigatorBar () {
             target='_blank'
             rel='noreferal'
           >
-            <div className="flex items-center gap-2">
-              <div className="rounded-full p-2 bg-white/80">
-                <FaFacebook  className="text-[var(--primary)]"/>
+            <div className="flex items-center gap-2 text-sm">
+              <div className="rounded-full p-1 bg-white/80 size-[22px] flex items-center justify-center">
+                <FaFacebook  className="text-[var(--primary)] text-[14px]"/>
               </div>
                <span className="text-sm">แผนน้ำภาคใต้ วช.</span>
             </div>
           </Link>
           <Link href='tel:065 676 2309' target='_blank' rel='noreferal'>
-            <div className="flex items-center gap-2">
-              <div className="rounded-full p-2 bg-white/80">
-                <HiPhone  className="text-[var(--primary)]"/>
+            <div className="flex items-center gap-2 text-sm">
+              <div className="rounded-full p-1 bg-white/80 size-[22px] flex items-center justify-center">
+                <HiPhone  className="text-[var(--primary)] text-[14px]"/>
               </div>
               <span className="text-sm">065 676 2309</span>
             </div>
@@ -82,7 +84,7 @@ export default function NavigatorBar () {
                 href={item.href}
                 className={`flex items-center gap-2 px-3 py-2 rounded-md transition ${
                   isActive
-                    ? 'border-b-2 rounded-none border-[var(--color-secondary)]  font-semibold'
+                    ? 'border-b-2  rounded-none border-[var(--color-secondary)] text-[var(--color-secondary)]  font-semibold'
                     : 'text-gray-700 hover:text-[var(--color-secondary)] '
                 }`}
               >
@@ -109,7 +111,7 @@ export default function NavigatorBar () {
                         key={item.id}
                         className={`w-full px-3 py-2 text-lg flex items-center gap-5 rounded-md transition ${
                           isActive
-                            ? 'border-b-2 rounded-none border-blue-500  font-semibold'
+                            ? 'bg-slate-200/20 rounded-sm text-[var(--color-secondary)]  font-semibold'
                             : 'hover:opacity-90 hover:bg-slate-200/20'
                         }`}
                         onClick={() => {

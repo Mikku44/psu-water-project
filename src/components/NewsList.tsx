@@ -6,7 +6,7 @@ import { FaCircleChevronRight } from 'react-icons/fa6'
 export default async function NewsList () {
   const result = await getAllNews()
 
-  console.log('NEWS :', result)
+  // console.log('NEWS :', result)
 
   return (
     <div className='max-h-[600px] w-full  overflow-auto'>

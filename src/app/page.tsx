@@ -1,4 +1,3 @@
-
 import CardProvider from '@/components/CardProvider'
 import NewsList from '@/components/NewsList'
 import Link from 'next/link'
@@ -6,6 +5,17 @@ import { BsCaretRightFill } from 'react-icons/bs'
 import { FaCircleChevronRight } from 'react-icons/fa6'
 import * as motion from 'motion/react-client'
 import { EmblaCarousel } from '@/components/carousel'
+
+const menuList = [
+  {
+    href: '/#',
+    label: 'ข้อมูลโครงการ'
+  },
+  {
+    href: '/#',
+    label: 'ติดต่อ/ประสานงาน'
+  }
+]
 
 // Animation variants
 const fadeInUp = {
@@ -58,25 +68,50 @@ export default function Home () {
   return (
     <main className='min-h-screen w-full '>
       {/* slider carousel */}
-      <section className="w-full h-full pb-5">
+      <section className='w-full h-full pb-5'>
         <EmblaCarousel />
       </section>
 
       {/* news section */}
+      <motion.div
+        className='text-3xl container-x mx-auto pb-5 md:text-4xl md:min-w-[400px] text-[var(--primary)] font-bold'
+        whileInView={fadeInLeft}
+      >
+        ข่าวประชาสัมพันธ์
+      </motion.div>
       <motion.section
         className='container-x grid md:grid-cols-3 gap-5'
         initial='hidden'
         animate='visible'
         variants={staggerChildren}
       >
-        <motion.div className='md:col-span-2' 
-        whileInView={fadeInLeft}>
+        <motion.div className='md:col-span-2' whileInView={fadeInLeft}>
           <CardProvider />
         </motion.div>
         <motion.div animate={fadeInRight}>
           <NewsList />
         </motion.div>
       </motion.section>
+
+      {/* menu service page */}
+      <section className='bg-[var(--color-secondary-light)]/20 py-10 mt-10'>
+        <motion.div
+          className='text-3xl  container-x mx-auto pb-5 md:text-3xl md:min-w-[400px] text-[var(--primary)] font-bold'
+          whileInView={fadeInLeft}
+        >
+          เมนูการดำเนินงาน
+        </motion.div>
+        <section className='container-x mx-auto py-5 flex md:flex-row flex-col gap-5'>
+          {menuList?.map(item => (
+            <div
+              key={item?.href}
+              className='shadow p-4 flex items-center hover:scale-105 duration-100 bg-white justify-center border rounded-xl size-[200px]'
+            >
+              {item?.label}
+            </div>
+          ))}
+        </section>
+      </section>
 
       {/* about project */}
       <motion.section
@@ -148,9 +183,6 @@ export default function Home () {
         </motion.div>
       </motion.section>
 
-     
-   
-
       {/* principle */}
       <motion.section
         className='md:py-20 py-10  mt-10'
@@ -194,7 +226,6 @@ export default function Home () {
 
           <motion.div
             animate={fadeInUp}
-            
             transition={{
               repeat: Infinity,
               duration: 2,
@@ -220,7 +251,6 @@ export default function Home () {
 
           <motion.div
             animate={fadeInUp}
-            
             transition={{
               repeat: Infinity,
               duration: 2,
@@ -246,7 +276,6 @@ export default function Home () {
           </motion.div>
         </motion.div>
       </motion.section>
-
     </main>
   )
 }
