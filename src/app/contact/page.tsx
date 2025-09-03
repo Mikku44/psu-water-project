@@ -217,7 +217,7 @@ export default function ContactPage () {
                 </div>
 
                 {/* Email */}
-                <div className='flex items-start space-x-4'>
+                {/* <div className='flex items-start space-x-4'>
                   <div
                     className='w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0'
                     style={{ backgroundColor: 'var(--color-primary)' }}
@@ -232,7 +232,7 @@ export default function ContactPage () {
                     <p className='text-gray-600'>info@research.ac.th</p>
                     <p className='text-gray-600'>contact@research.ac.th</p>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Office Hours */}
                 <div className='flex items-start space-x-4'>
