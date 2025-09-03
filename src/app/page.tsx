@@ -83,7 +83,7 @@ export default function Home () {
   return (
     <main className='min-h-screen w-full '>
       {/* slider carousel */}
-      <section className='w-full h-full pb-5'>
+      <section className='w-full h-full md:min-h-[80vh] pb-5'>
         <EmblaCarousel />
       </section>
 
@@ -310,13 +310,16 @@ export default function Home () {
        w-full h-[50vh]'
       >
         <div className='absolute flex justify-center w-full top-[-30%]'>
-          <div className=' bg-white  w-[50vw] shadow-xl  border-gray-100/60 rounded-xl py-5'>
+          <div className=' bg-white  md:w-[50vw] w-[90vw] shadow-xl  border-gray-100/60 rounded-xl py-5'>
             <div className='mx-auto text-center py-5'>
-              <div className=' md:text-3xl md:min-w-[400px] text-[var(--color-secondary)] font-bold'>
+              <div className=' text-sm text-gray-500'>
+                โครงการดำเนินงานภายใต้
+              </div>
+              <div className=' md:text-3xl text-2xl md:min-w-[400px] text-[var(--color-secondary)] font-bold'>
                 หน่วยงานที่เกี่ยวข้อง
               </div>
             </div>
-            <div className='w-full px-4 flex gap-10 justify-center py-5 flex-wrap '>
+            <div className='w-full px-4 flex overflow-auto gap-10 justify-center py-5 flex-wrap '>
               {orgList.map(item => (
                 <motion.div
                   initial={{
