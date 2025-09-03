@@ -41,6 +41,9 @@ export function EmblaCarousel () {
 
   return (
     <div className=' relative '>
+      {isLoading && <div className="w-full min-h-[80vh]
+      flex justify-center items-center">
+        <img src="/icons/loading.png" className='size-[30px] relative bottom-0 m-5 animate-spin' /></div>}
       {/* Carousel viewport */}
       <div className='embla__viewport relative' ref={emblaRef}>
         <div className='embla__container'>
@@ -61,7 +64,7 @@ export function EmblaCarousel () {
       </div>
       {/* Dots */}
       <div className='embla__dots flex justify-center gap-2 mt-3 z-[99] absolute  bottom-0 p-5'>
-        {isLoading && <img src="/icons/loading.png" className='size-[30px] animate-spin' />}
+        
         {scrollSnaps.map((_, index) => (
           <button
             key={index}

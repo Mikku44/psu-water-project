@@ -109,7 +109,7 @@ export default function Home () {
       </motion.section>
 
       {/* menu service page */}
-      <section className='bg-linear-240 from-[var(--color-primary)] to-[var(--color-info)] py-10 mt-10'>
+      <section className=' bg-linear-240 from-[var(--color-primary)] to-[var(--color-info)] py-10 mt-10'>
         <motion.div
           className='text-3xl  container-x mx-auto pb-5 md:text-3xl md:min-w-[400px] text-white font-bold'
           whileInView={fadeInLeft}

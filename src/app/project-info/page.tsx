@@ -331,7 +331,7 @@ export default function page () {
         viewport={{ once: true, margin: '-100px' }}
         variants={staggerChildren}
       >
-        <div className='container-x '>
+        <div id="south-plan" className='container-x '>
           <motion.div
             className='text-center mb-2 text-black/60'
             animate={fadeInUp}
@@ -342,7 +342,7 @@ export default function page () {
             className='text-4xl md:text-5xl text-center md:min-w-[400px] text-[var(--primary)] font-bold'
             animate={fadeInUp}
           >
-            ตำบลจังหวัดกรม
+            ตำบล จังหวัด กรม
           </motion.div>
 
           <motion.div
@@ -392,7 +392,7 @@ export default function page () {
         viewport={{ once: true, margin: '-100px' }}
         variants={staggerChildren}
       >
-        <div className='container-x '>
+        <div id="province-plan" className='container-x '>
           <motion.div
             className='text-center mb-2 text-black/60'
             animate={fadeInUp}
@@ -580,7 +580,7 @@ export default function page () {
         viewport={{ once: true, margin: '-100px' }}
         variants={staggerChildren}
       >
-        <div className='container-x'>
+        <div id="subdistrict-plan" className='container-x'>
           <motion.div
             className='text-center mb-2 text-black/60'
             animate={fadeInUp}
