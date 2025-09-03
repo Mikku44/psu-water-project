@@ -22,15 +22,14 @@ export default function CollapseMenu({
     <div className="w-full">
       <button
         onClick={() => setOpen(!open)}
-        className={`flex w-full items-center justify-between px-4 py-3 text-left transition ${
-          isActive
-            ? "text-[var(--color-secondary)] font-semibold"
-            : "text-gray-700 hover:text-[var(--color-secondary)]"
+        className={`w-full px-3 py-2 text-lg flex items-center gap-5  transition  ${
+           isActive
+                            ? 'bg-slate-200/20 rounded-sm text-[var(--color-secondary)]  font-semibold'
+                            : 'hover:opacity-90 hover:bg-slate-200/20'
         }`}
       >
-        <div className="flex items-center gap-2">
-          {icon && <span className="w-5 h-5">{icon}</span>}
-          {label}
+        <div className="flex items-center gap-5">
+         {icon} {label}
         </div>
         <svg
           className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`}
