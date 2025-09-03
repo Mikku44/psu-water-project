@@ -65,10 +65,10 @@ export default function NavigatorBar () {
       <div className='container-x flex justify-between items-center'>
         {/* Logo */}
         <Link href='/' className='flex gap-2 items-center'>
-          <div className='w-[130px] h-[80px] flex items-center justify-center overflow-hidden'>
+          <div className='size-[70px] p-2 flex items-center justify-center overflow-hidden'>
             <img
-              src='/psu-logo-th.png'
-              className='w-full h-full object-cover'
+              src='/icon.png'
+              className=' object-cover'
               alt='psu logo'
             />
           </div>

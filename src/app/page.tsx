@@ -8,13 +8,28 @@ import { EmblaCarousel } from '@/components/carousel'
 
 const menuList = [
   {
-    href: '/#',
-    label: 'ข้อมูลโครงการ'
+    href: '/project-info',
+    label: 'ข้อมูลโครงการ',
+    image : '/icons/action-plan.png'
   },
   {
-    href: '/#',
-    label: 'ติดต่อ/ประสานงาน'
-  }
+    href: '/board',
+    label: 'คณะทีมทำงาน',
+    image : '/icons/project.png'
+  },
+  {
+    href: '/contact',
+    label: 'ติดต่อ/ประสานงาน',
+    image : '/icons/advertisement.png'
+  },
+]
+
+const orgList = [
+  { id: 1, img: 'aw.png' },
+  { id: 2, img: 'nrct.jpg' },
+  { id: 3, img: 'sksw.png' },
+  { id: 4, img: 'swk.png' },
+  { id: 5, img: 'psu-logo-th.png' }
 ]
 
 // Animation variants
@@ -94,21 +109,31 @@ export default function Home () {
       </motion.section>
 
       {/* menu service page */}
-      <section className='bg-[var(--color-secondary-light)]/20 py-10 mt-10'>
+      <section className='bg-linear-240 from-[var(--color-primary)] to-[var(--color-info)] py-10 mt-10'>
         <motion.div
-          className='text-3xl  container-x mx-auto pb-5 md:text-3xl md:min-w-[400px] text-[var(--primary)] font-bold'
+          className='text-3xl  container-x mx-auto pb-5 md:text-3xl md:min-w-[400px] text-white font-bold'
           whileInView={fadeInLeft}
         >
           เมนูการดำเนินงาน
         </motion.div>
-        <section className='container-x mx-auto py-5 flex md:flex-row flex-col gap-5'>
+        <section className='container-x mx-auto py-8 grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4'>
           {menuList?.map(item => (
-            <div
-              key={item?.href}
-              className='shadow p-4 flex items-center hover:scale-105 duration-100 bg-white justify-center border rounded-xl size-[200px]'
+            <Link
+            href={item.href}
+              key={item?.label}
+              className='bg-white rounded-2xl shadow-md hover:shadow-xl hover:scale-[1.03] transition-all duration-300 overflow-hidden cursor-pointer'
             >
-              {item?.label}
-            </div>
+              <div className='w-full h-40 flex justify-center items-center'>
+                <img
+                  src={item.image}
+                  alt={item?.label}
+                  className='max-w-[120px]'
+                />
+              </div>
+              <div className='p-4 text-center font-medium text-gray-800'>
+                {item?.label}
+              </div>
+            </Link>
           ))}
         </section>
       </section>
@@ -276,6 +301,44 @@ export default function Home () {
           </motion.div>
         </motion.div>
       </motion.section>
+
+      {/* organization */}
+      <div className='my-20 text-white'>.</div>
+      <section
+        className='relative mt-10 bg-[var(--primary)] 
+      bg-[url("/bg/purple.avif")] bg-cover 
+       w-full h-[50vh]'
+      >
+        <div className='absolute flex justify-center w-full top-[-30%]'>
+          <div className=' bg-white  w-[50vw] shadow-xl  border-gray-100/60 rounded-xl py-5'>
+            <div className='mx-auto text-center py-5'>
+              <div className=' md:text-3xl md:min-w-[400px] text-[var(--color-secondary)] font-bold'>
+                หน่วยงานที่เกี่ยวข้อง
+              </div>
+            </div>
+            <div className='w-full px-4 flex gap-10 justify-center py-5 flex-wrap '>
+              {orgList.map(item => (
+                <motion.div
+                  initial={{
+                    opacity: 0,
+                    y: -10
+                  }}
+                  whileInView={{
+                    opacity: 1,
+                    y: 0
+                  }}
+                  key={item?.id}
+                >
+                  <img
+                    src={`/organization/${item.img}`}
+                    className='md:h-[100px] h-[80px]'
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 }
