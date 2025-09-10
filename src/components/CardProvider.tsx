@@ -15,7 +15,7 @@ export default async function CardProvider () {
       <div id='info' className='p-6 relative'>
         <div className='text-sm text-gray-100 font-medium'>ประชาสัมพันธ์</div>
         <div className='text-title text-gray-100 font-bold'>{item?.title || "ข่าวประชาสัมพันธ์"}</div>
-        <div className=' text-gray-100 '>
+        <div className=' text-gray-100 line-clamp-5'>
           {item?.description}
         </div>
         <Link
@@ -28,7 +28,7 @@ export default async function CardProvider () {
         <div className="text-sm font-medium text-gray-200 absolute bottom-0 mb-5">โพสต์เมื่อ {new Date(item?.created_at).toDateString()}</div>
       </div>
 
-      <div id='cover' className='bg-white h-full max-h-[400px] overflow-clip'>
+      <div id='cover' className='bg-white h-full max-h-[500px] overflow-clip'>
         <img
           src={item?.image_url?.[0] || 'https://images.unsplash.com/photo-1520361098688-a4b9960d394b?q=80&w=1172&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}
           className='h-full w-full object-cover group-hover:scale-105 duration-200'

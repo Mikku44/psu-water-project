@@ -35,8 +35,10 @@ export async function getFilterNews({ query = '', sort = 'latest' }: NewsFilter)
   let req = supabase.from('news').select('*')
 
   
-  if (query) {
-    req = req.or(`title.ilike.%${query}%,description.ilike.%${query}%`)
+ if (query) {
+    // Escape % and _ to avoid issues
+    const safeQuery = query.replace(/%/g, '\\%').replace(/_/g, '\\_')
+    req = req.or(`title.ilike.%${safeQuery}%,description.ilike.%${safeQuery}%`)
   }
 
   switch (sort) {

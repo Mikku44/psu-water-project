@@ -22,7 +22,7 @@ export default async function NewsList () {
 
       <div className='mt-4 space-y-2'>
         {/* card list */}
-        {result?.map((item, index) => (
+        {result?.slice(0,3)?.map((item, index) => (
           <Link
             key={index}
             href={'/public-relations/' + item.slug}
