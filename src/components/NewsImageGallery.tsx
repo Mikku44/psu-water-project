@@ -32,10 +32,10 @@ export default function NewsImageGallery({ imageUrls, title }: Readonly<NewsImag
           <PhotoView
             key={idx}
             src={img}
-            alt={`${title} ${idx + 1}`}
+            // alt={`${title} ${idx + 1}`}
             // Optional: Set a custom caption that appears inside the preview
             // Use the title prop of PhotoView for the image alt/description inside the viewer
-            title={`${title} Image ${idx + 1}`} 
+            // title={`${title} Image ${idx + 1}`} 
           >
             {/* The actual image element that users click on */}
             <img

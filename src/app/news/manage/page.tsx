@@ -15,7 +15,7 @@ import { INews } from '@/app/models/newsModel'
 
 // --- Types for Content Block ---
 interface ContentBlock {
-  type: 'heading' | 'paragraph' | 'list' | 'text'
+  type: string
   text: string
 }
 
