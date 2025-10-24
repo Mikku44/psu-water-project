@@ -1,6 +1,7 @@
 import { INews } from '@/app/models/newsModel'
 import { getNewsWithSlug } from '@/app/repositories/news'
 import BreadcrumbChev from '@/components/Breadcrumb'
+import NewsImageGallery from '@/components/NewsImageGallery' // <-- NEW IMPORT
 import { notFound } from 'next/navigation'
 import React from 'react'
 
@@ -8,7 +9,7 @@ interface INewsProps {
   params: Promise<{ slug: string }>
 }
 
-export default async function page ({ params }: Readonly<INewsProps>) {
+export default async function page({ params }: Readonly<INewsProps>) {
   const { slug } = await params
   const slugSearch: INews[] = (await getNewsWithSlug(slug)) || []
 
@@ -78,19 +79,13 @@ export default async function page ({ params }: Readonly<INewsProps>) {
           </div>
         </section>
 
-        {/* Image Gallery (if any) */}
+        {/* Image Gallery (Now using the Client Component with Modal) */}
         {currentNews.image_url?.length > 0 && (
           <section className='container-x my-10'>
-            <div className='columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4'>
-              {currentNews.image_url.map((img, idx) => (
-                <img
-                  key={idx}
-                  src={img}
-                  alt={`news-gallery-${idx}`}
-                  className='w-full mb-4 break-inside-avoid rounded-lg shadow-sm object-cover'
-                />
-              ))}
-            </div>
+            <NewsImageGallery
+              imageUrls={currentNews.image_url}
+              title={currentNews.title}
+            />
           </section>
         )}
       </main>
